@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const links = [
-  { link: '/', label: 'Home' }
+  { link: '/wtao628.github.io/', label: 'Home' }
 ]
 
 /**
@@ -16,11 +16,11 @@ export default function Header(): React.JSX.Element {
   const items = links.map((link) => {
     // Bold text if link is same as active link
     if (link.link === active) {
-      return <Text fw={700} c='blue'>{link.label}</Text>
+      return <Text fw={700} key={link.label}>{link.label}</Text>
     }
 
     return (
-      <Link to={link.link} onClick={() => setActive(link.link)}>
+      <Link to={link.link} onClick={() => setActive(link.link)} key={link.label}>
         {link.label}
       </Link>
     )

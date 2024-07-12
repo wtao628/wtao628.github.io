@@ -17,7 +17,7 @@ export default function App(): React.JSX.Element {
         <Header />
         <AppShell.Main>
           <Routes>
-            <Route path='/wtao628.github.io/' element={<Home />} />
+            <Route index element={<Home />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </AppShell.Main>
