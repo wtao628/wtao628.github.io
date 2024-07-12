@@ -12,7 +12,7 @@ import Home from './pages/Home';
  */
 export default function App(): React.JSX.Element {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/wtao628.github.io/'>
       <AppShell header={{ height: 50 }} padding='md'>
         <Header />
         <AppShell.Main>
