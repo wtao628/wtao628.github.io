@@ -15,13 +15,13 @@ interface HomeProps {
 export default function Home({ height }: HomeProps): React.JSX.Element {
   return (
     <div>
-      <Center h={height}>
+      <Center h={height} id='intro'>
         <Flex align='center' direction='column'>
           <Title size='80'>Hey there!</Title>
           <Title order={1}>I'm Winston.</Title>
         </Flex>
       </Center>
-      <Container>No</Container>
+      <Container></Container>
     </div>
   )
 }
