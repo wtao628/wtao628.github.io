@@ -10,4 +10,7 @@
 body {
   min-width: 320px;
   min-height: 100vh;
+
+  --orange: #eb5e28;
+  --light-blue: #97ead2;
 }

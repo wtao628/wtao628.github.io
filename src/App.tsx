@@ -19,9 +19,9 @@ export default function App(): React.JSX.Element {
   useEffect(() => {
     const current = ref.current;
     if (current) {
-      setHeight(current.offsetHeight);
+      setHeight(current.offsetHeight - 50); // subtract header height
     }
-  }, [])
+  }, [ref])
 
   return (
     <MantineProvider>

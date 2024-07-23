@@ -7,7 +7,7 @@ import './Header.css';
 
 const links = [
   { link: '/', label: 'Home' },
-  { link: '/projects', label: 'Projects'},
+  { link: '/projects', label: 'Projects' },
 ]
 
 /**
@@ -20,7 +20,7 @@ export default function Header(): React.JSX.Element {
   const items = links.map((link) => {
     // Bold text if link is same as active link
     if (link.link === location) {
-      return <Text fw={700} key={link.label} className='active'>{link.label}</Text>
+      return <Text fw={700} key={link.label}>{link.label}</Text>
     }
     return (
       <Link to={link.link} key={link.label} className='links'>
@@ -41,7 +41,7 @@ export default function Header(): React.JSX.Element {
         <ActionIcon
           variant='outline'
           radius='sm'
-          color='blue'
+          color='#eb5e28'
           onClick={() => window.open('https://github.com/wtao628/wtao628.github.io')}
           >
           <IconCode />
