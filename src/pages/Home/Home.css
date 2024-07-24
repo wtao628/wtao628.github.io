@@ -5,6 +5,10 @@
   animation: gradient-animation 6s ease infinite;
 }
 
+.icon {
+  color: light-dark(var(--orange), var(--light-blue));
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
