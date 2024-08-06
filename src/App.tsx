@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
+import Projects from './pages/Projects/Projects';
 
 import '@mantine/core/styles.css';
 
@@ -31,7 +32,7 @@ export default function App(): React.JSX.Element {
           <AppShell.Main ref={ref}>
             <Routes>
               <Route index element={<Home height={height} />} />
-              <Route path='/projects' element={<ErrorPage />}/>
+              <Route path='/projects' element={<Projects />}/>
               <Route path='*' element={<ErrorPage />} />
             </Routes>
           </AppShell.Main>
