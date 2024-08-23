@@ -9,6 +9,8 @@ import Projects from './pages/Projects/Projects';
 
 import '@mantine/core/styles.css';
 
+const headerHeight = 50;
+
 /**
  * The wrapper for the web application.
  * @returns {React.JSX.Element} The web application.
@@ -20,14 +22,14 @@ export default function App(): React.JSX.Element {
   useEffect(() => {
     const current = ref.current;
     if (current) {
-      setHeight(current.offsetHeight - 50); // subtract header height
+      setHeight(current.offsetHeight - headerHeight);
     }
   }, [ref])
 
   return (
     <MantineProvider>
       <BrowserRouter>
-        <AppShell header={{ height: 50 }} padding={0}>
+        <AppShell header={{ height: headerHeight }} padding={0}>
           <Header />
           <AppShell.Main ref={ref}>
             <Routes>

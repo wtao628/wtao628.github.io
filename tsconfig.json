@@ -1,4 +1,9 @@
 {
+  "compilerOptions": {
+    "module": "CommonJS",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
   "files": [],
   "references": [
     {

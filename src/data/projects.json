@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Ferromagnetism",
+        "link": "https://github.com/wtao628/ferromagnetism",
+        "technologies": ["Python", "Jupyter"]
+    },
+    {
+        "name": "Particle Collision",
+        "link": "https://github.com/wtao628/particle-collision",
+        "technologies": ["Python", "Jupyter"]
+    },
+    {
+        "name": "JupyterHub Single-User Images",
+        "link": "https://github.com/wtao628/singleuser-notebooks",
+        "technologies": ["Dockerfile"]
+    },
+    {
+        "name": "Winston's Website",
+        "link": "https://wtao628.github.io/projects",
+        "technologies": ["TypeScript", "CSS", "JavaScript", "HTML"]
+    }
+]

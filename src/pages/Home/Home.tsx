@@ -1,31 +1,43 @@
-import { ActionIcon, Center, Container, Flex, Grid, Group, Image, Paper, Text, Title } from "@mantine/core";
-import { IconBrandGithub, IconBrandLinkedin, IconBuilding, IconMapPin, IconSchool } from "@tabler/icons-react";
-import React from "react";
+import { ActionIcon, Center, Container, Flex, Grid, Group, Image, Paper, Text, Title } from '@mantine/core';
+import { IconBrandGithub, IconBrandLinkedin, IconBuilding, IconMapPin, IconSchool } from '@tabler/icons-react';
+import React from 'react';
 
 import './Home.css';
 
+const paragraphs = [
+  `I'm a fourth-year student at the University of British Columbia, aiming for
+  my Bachelor of Science. I'm enrolled in the Combined Honours in Physics and
+  Astronomy and Science Co-op programs. Currently, I'm finishing up my
+  software engineering internship at Korotu Technology Inc.`,
+]
+
 /** The props that must be inputted into the Home component. */
 interface HomeProps {
+  /** The height of the homepage animation. */
   height: number,
 }
 
 /**
  * The homepage for the website.
- * @param {number} height The height the animation takes up.
+ * @param {number} height The height of the homepage animation.
  * @returns {React.JSX.Element} The homepage for the website.
  */
 export default function Home({ height }: HomeProps): React.JSX.Element {
+  const description = paragraphs.map(
+    (paragraph) => <Text pb='md'>{paragraph}</Text>
+  );
+
   return (
     <div>
       <Center h={height} id='intro'>
         <Flex align='center' direction='column'>
-          <Title size={80}>Hey there!</Title>
-          <Title order={1}>I'm Winston.</Title>
+          <Title size={80} className='greeting'>Hey there!</Title>
+          <Title className='greeting'>I'm Winston.</Title>
         </Flex>
       </Center>
       <Container h={height} pt='lg' pb='lg'>
         <Grid>
-          <Grid.Col span={4.5}>
+          <Grid.Col span={{ sm: 4.5, xs: 12 }}>
             <Paper shadow='md' radius='lg'>
               <Flex align='center' direction='column'>
                 <Image radius='xl' src={null} pt='lg' />
@@ -62,7 +74,9 @@ export default function Home({ height }: HomeProps): React.JSX.Element {
               </Flex>
             </Paper>
           </Grid.Col>
-          <Grid.Col span={7.5}>
+          <Grid.Col span={{ sm: 7.5, xs: 12 }}>
+            <Title order={2}>About Me</Title>
+            {description}
           </Grid.Col>
         </Grid>
       </Container>

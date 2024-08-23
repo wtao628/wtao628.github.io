@@ -2,21 +2,30 @@
   background: light-dark(linear-gradient(334deg, #e15a97, #fdca40, #eb5e28),
                          linear-gradient(334deg, #4321a9, #642aa5, #140655));
   background-size: 180% 180%;
-  animation: gradient-animation 6s ease infinite;
+  animation: gradientAnimation 6s ease infinite;
+}
+
+.greeting {
+  animation: slideIn 1s;
 }
 
 .icon {
   color: light-dark(var(--orange), var(--light-blue));
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
