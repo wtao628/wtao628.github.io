@@ -45,13 +45,13 @@ export default function Home({ height }: HomeProps): React.JSX.Element {
                 <Text fs='italic' pb='md'>Undergraduate Student</Text>
                 <Group gap='xs' pb='md'>
                   <ActionIcon
-                    variant='white'
+                    variant='subtle'
                     onClick={() => window.open('https://github.com/wtao628')}
                     >
                     <IconBrandGithub className='icon' />
                   </ActionIcon>
                   <ActionIcon
-                    variant='white'
+                    variant='subtle'
                     onClick={() => window.open('https://ca.linkedin.com/in/winston-tao-ab3b57262')}
                     >
                     <IconBrandLinkedin className='icon' />

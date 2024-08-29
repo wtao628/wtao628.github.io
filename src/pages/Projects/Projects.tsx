@@ -1,4 +1,4 @@
-import { ActionIcon, Anchor, Autocomplete, Center, Container, Group, Menu, Pagination, Paper, Stack, Text } from '@mantine/core';
+import { ActionIcon, Anchor, Autocomplete, Center, Container, Group, Menu, Pagination, Paper, Stack, Text, useMantineColorScheme } from '@mantine/core';
 import { IconFilter, IconSearch } from '@tabler/icons-react';
 import React, { useState } from 'react';
 
@@ -13,6 +13,8 @@ import './Projects.css';
 export default function Projects(): React.JSX.Element {
   const [page, setPage] = useState<number>(1);
   const [projects, setProjects] = useState<{ name: string, link: string, technologies: string[] }[]>(data);
+  
+  const color = useMantineColorScheme().colorScheme === 'dark' ? '#97ead2' : '#eb5e28'
 
   /**
    * Updates the list of shown projects according to the search input.
@@ -41,7 +43,7 @@ export default function Projects(): React.JSX.Element {
             href={project.link}
             underline='never'
             fw={700}
-            c='#eb5e28'
+            c={color}
             key={key}
             >
             {project.name}
@@ -66,7 +68,7 @@ export default function Projects(): React.JSX.Element {
           <Menu.Target>
             <ActionIcon
             variant='outline'
-            color='#eb5e28'
+            color={color}
             >
               <IconFilter />
             </ActionIcon>
@@ -99,8 +101,9 @@ export default function Projects(): React.JSX.Element {
               <Pagination
                 total={Math.ceil(projects.length / 4)}
                 value={page}
-                color='#eb5e28'
+                color={color}
                 onChange={setPage}
+                autoContrast
               />
             </Center>
           </Stack>

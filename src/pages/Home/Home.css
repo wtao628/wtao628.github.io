@@ -1,6 +1,6 @@
 #intro {
   background: light-dark(linear-gradient(334deg, #e15a97, #fdca40, #eb5e28),
-                         linear-gradient(334deg, #4321a9, #642aa5, #140655));
+                         linear-gradient(334deg, #a9215a, #714ef0, #140655));
   background-size: 180% 180%;
   animation: gradientAnimation 6s ease infinite;
 }

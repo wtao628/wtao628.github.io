@@ -27,7 +27,7 @@ export default function App(): React.JSX.Element {
   }, [ref])
 
   return (
-    <MantineProvider>
+    <MantineProvider defaultColorScheme='auto'>
       <BrowserRouter>
         <AppShell header={{ height: headerHeight }} padding={0}>
           <Header />

@@ -1,5 +1,5 @@
-import { ActionIcon, AppShell, Group, Text } from '@mantine/core';
-import { IconCode } from '@tabler/icons-react';
+import { ActionIcon, AppShell, Group, Text, useMantineColorScheme } from '@mantine/core';
+import { IconCode, IconMoon, IconSun } from '@tabler/icons-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -15,7 +15,10 @@ const links = [
  * @returns {React.JSX.Element} The navigation header.
  */
 export default function Header(): React.JSX.Element {
+  const colorScheme = useMantineColorScheme();
   const location = useLocation().pathname;
+
+  const dark = colorScheme.colorScheme === 'dark'
 
   const items = links.map((link) => {
     // Bold text if link is same as active link
@@ -41,10 +44,23 @@ export default function Header(): React.JSX.Element {
         <ActionIcon
           variant='outline'
           radius='sm'
-          color='#eb5e28'
+          color={ dark ? '#97ead2' : '#eb5e28' }
           onClick={() => window.open('https://github.com/wtao628/wtao628.github.io')}
           >
           <IconCode />
+        </ActionIcon>
+        <ActionIcon
+          variant='outline'
+          radius='sm'
+          color={ dark ? '#eb5e28' : '#97ead2' }
+          onClick={colorScheme.toggleColorScheme}
+          title='Toggle light-dark theme'
+          >
+            {dark ? (
+              <IconSun />
+            ) : (
+              <IconMoon />
+            )}
         </ActionIcon>
       </Group>
     </AppShell.Header>
